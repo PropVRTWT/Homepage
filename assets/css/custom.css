@@ -145,6 +145,17 @@ background: #000 !important;
         max-height: 738px;
     }
 }
+@media only screen and (max-width:414px){
+    .banner_content {
+        padding: 0.5rem 12px !important;
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width:767px){
+    .banner_content {
+        padding: 1rem 25px !important;
+    }
+}
 
 @media only screen and (max-width: 1024px){
 .banner_content {
@@ -155,6 +166,7 @@ background: #000 !important;
     position: absolute;
     top: 28%;
     z-index: 1;
+    padding: 1rem 40px;
 }
 
 
@@ -316,6 +328,10 @@ background: #000 !important;
 }
 
 /* Pricing CSS */
+
+[class|="ttabs-element"] [class|="wrapper"] ul.active{
+    display: flex !important;
+}
 .pricing_plans{
     font-size: 36px;
   font-weight: bold;
@@ -335,10 +351,11 @@ background: #000 !important;
     display: flex;
     margin-bottom: 100px;
     width: max-content;
+    margin: auto;
 }
 
 .pricing_tab_indiv{
-    padding: 0px 12px 0px 12px !important;
+    padding:12px !important;
     white-space: nowrap;
     width: 160px;
     height: 40px !important;
@@ -347,13 +364,15 @@ background: #000 !important;
     text-align: center;
     font-weight: bold !important;
     color:#fff !important;
+    line-height: 1 !important;
 }
 
 .pricing_tab_indiv.active{
     background-color: #f3f4f7 !important;
     border-radius: 4px !important;
     color: #14161b !important;
-    /* transition: transform .4s,background-color .1s,color .1s !important; */
+    transform: scale(1.05);
+    transition: transform .4s,background-color .1s,color .1s !important;
 }
 
 @media only screen and  (max-width:767px){
@@ -445,7 +464,8 @@ background: #000 !important;
     /* background: #fff; */
     padding-left: 30px;
     padding-right: 30px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
+    border-radius: 5px;
 }
 
 [class|="ctabox-element"]{
