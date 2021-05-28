@@ -62,7 +62,7 @@
                     <!--  class: height-sm, height-md, height-lg  -->
                     <div id="logo" class="height-lg">
                         <a class="navbar-brand" href="/">
-                            <img src="assets/img/logo/logo.png">
+                            <img style="margin-left: -10px;width: 90%;" src="assets/img/logo/logo.png">
                         </a>
                     </div>
                     <!--  END Header Logo  -->
@@ -89,8 +89,9 @@
                             </ul>
                         </div>
                         <!--  Menu Cta  -->
-                        <div class="cta">
-                            <a href="#" class="btn--big--round--border--light signup_btn">Sign Up</a>
+                        <div class="cta" id="signup_div">
+                            <a href="#" style="min-width: 90px;
+                            font-size: 1rem;" class="btn--big--round--border--light signup_btn">Sign Up</a>
                         </div>
                         <!--  END Menu Cta  -->
                         <!--  Hamburger Menu  -->
@@ -142,7 +143,52 @@
             <div class="banner_div">
                 <div class="banner_div1">
                     <section>
-                       <div class="combine_div">
+
+                        <div class="row" style="align-items: center;width: 100%;">
+        <div class="col-md-4" style="padding: 30px;">
+        
+        <h1 class="banner_heading">
+                                ai enhance
+                            </h1><p class="banner_subheading">
+                                Make your real estate images look better. 100% automatic and fast
+                            </p><div class="banner_button_div">
+                                <div class="cta">
+                                    <a href="#" style="font-size: 1rem;" class="btn--big--round--border--light try_it_free">Try for Free</a>
+                                </div>
+                                <div class="cta">
+                                    <a href="#" style="font-size: 1rem;" class="btn--big--round--border--light request_api">Sign Up</a>
+                                </div>
+                            </div></div>
+        <div class="col-md-8 mb-3" style="
+    margin-bottom: 40px;
+    margin-top: 40px;
+">
+        
+        <div class="image_slider">
+                                    <div style="padding:10px;margin:auto">
+                                        <div id="before-after-slider">
+                                          <div id="before-image">
+                                            <img src="assets/img/logo/beforeimageslider.jpg" alt="before" style="width: 270px;">
+                                          </div>
+                                        
+                                          <div id="after-image">
+                                            <img src="assets/img/logo/imageslider.jpg" alt="After">
+                                          </div>
+                                      
+                                          <div id="resizer"></div>
+                                        <div id="beforeafter" class="beforeafter">
+                                            <div class="beforeafter_div">
+                                                <div class="beforeafter_label">Before</div>
+                                                <div class="beforeafter_label">After</div>
+                                            </div>
+            
+                                        </div>
+                                       </div>
+                                      </div>
+                                    </div></div>
+    
+    </div>
+                       <!-- <div class="combine_div">
                         <div class="banner_content">
                             <h1 class="banner_heading">
                                 ai enhance
@@ -161,43 +207,35 @@
                         </div>
                         <div class="upload_main">
                             <div class="upload_main_div">
-                                    <div class="upload_main_div_icon">
-                                       <svg style="margin: 10px 0;" width="40" height="25" viewBox="0 0 40 25" fill="none">
-                                          <path d="M31.5785 10.3741C31.0091 10.3741 30.4836 10.4167 29.9142 10.5442C29.9142 10.5017 29.9142 10.5017 29.9142 10.4592C29.9142 4.71939 25.1402 0 19.2712 0C14.1906 0 9.8546 3.48639 8.84724 8.33333C8.71584 8.33333 8.58445 8.33333 8.49685 8.33333C3.81044 8.33333 0 12.0748 0 16.6667C0 21.216 3.72285 24.915 8.32166 25H16.2929V24.0221V19.2602H13.3147C13.0081 19.2602 12.7453 19.0901 12.6139 18.835C12.4825 18.5799 12.4825 18.2823 12.6577 18.0697L18.877 9.31122C19.0084 9.09864 19.2712 8.97109 19.4902 8.97109C19.753 8.97109 19.972 9.09864 20.1034 9.31122L26.3227 18.0697C26.4103 18.1973 26.4541 18.3673 26.4541 18.4949C26.4541 18.6224 26.4103 18.75 26.3665 18.835C26.2351 19.0901 25.9723 19.2602 25.6658 19.2602H22.7751V24.0221V25H31.6661C35.5641 24.9575 38.7614 21.8963 39.0242 18.1548V17.2619C38.7614 13.3929 35.5203 10.3741 31.5785 10.3741Z" fill="#2B2C39"></path>
-                                       </svg>
-                                       <span style="margin: 10px 0;color: #b0b7cb;">Drag and drop anywhere 
-                                         <span style="color:#1b57db">to upload</span>
-                                      </span>
-                                      <input type="file" style="display: none;" accept="image/png image/jpeg image/jpg image/x-ms-bmp image/bmp image/webp">
+                                <div class="image_slider">
+                                    <div style="padding:10px;margin:auto">
+                                        <div id="before-after-slider">
+                                          <div id="before-image">
+                                            <img src="assets/img/logo/beforeimageslider.jpg" alt="before"/>
+                                          </div>
+                                        
+                                          <div id="after-image">
+                                            <img src="assets/img/logo/imageslider.jpg" alt="After"/>
+                                          </div>
+                                      
+                                          <div id="resizer"></div>
+                                        <div id="beforeafter" class="beforeafter">
+                                            <div class="beforeafter_div">
+                                                <div class="beforeafter_label">Before</div>
+                                                <div class="beforeafter_label">After</div>
+                                            </div>
+            
+                                        </div>
+                                       </div>
+                                      </div>
                                     </div>
                             </div>
                            
                          </div>
-                       </div>
+                       </div> -->
                         
                     </section>
-                    <div class="image_slider">
-                        <div style="padding:10px;margin:auto">
-                            <div id="before-after-slider">
-                              <div id="before-image">
-                                <img src="assets/img/logo/beforeimageslider.jpg" alt="before"/>
-                              </div>
-                            
-                              <div id="after-image">
-                                <img src="assets/img/logo/imageslider.jpg" alt="After"/>
-                              </div>
-                          
-                              <div id="resizer"></div>
-                            <div id="beforeafter" class="beforeafter">
-                                <div class="beforeafter_div">
-                                    <div class="beforeafter_label">Before</div>
-                                    <div class="beforeafter_label">After</div>
-                                </div>
-
-                            </div>
-                           </div>
-                          </div>
-                        </div>
+                 
                 </div>
             </div>
         </div>
@@ -570,11 +608,11 @@
                             </div>
                         </div>
                     </div>
-                    <div data-aos="fade-up" data-aos-delay="200" class="row" data-padding="smtop">
+                    <div data-aos="fade-up" data-aos-delay="200" class="row" data-padding="xstop">
                         <div class="col-12">
                             <div class="accordion-element--border">
                                 <ul>
-                                    <li style="border-top:1px solid #CDCDCD !important" class="faq_border">
+                                    <li class="faq_border">
                                         <div class="title">Website & Mobile App Design</div>
                                         <div class="icon"></div>
                                         <div class="description">
