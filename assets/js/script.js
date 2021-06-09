@@ -78,7 +78,7 @@ document.body.addEventListener('touchmove',function(e){
 
 function slideIt(x){
     let transform = Math.max(0,(Math.min(x,slider.offsetWidth)));
-    console.log(rightwidth)
+    //console.log(rightwidth)
     if(leftwidth<transform && transform<rightwidth){
         before.style.width = transform+"px";
         resizer.style.left = transform-0+"px";
