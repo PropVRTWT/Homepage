@@ -255,16 +255,38 @@
           touch-action: pan-y;
       }
       
-      #resizer:after {
+      #resizer:after,#resizer:before {
+        content: '';
+    width: 0;
+    height: 0;
+    border: 6px inset #ffffff00;
+    position: absolute;
+    top: 50%;
+    margin-top: -6px;   
+      }
+      #resizer:before{
+        border-right: 6px solid white;
+    left: 50%;
+    margin-left: -19px;
+      }
+      #resizer_div:after{
         content: '';
     position: absolute;
     margin: 0 0 0 -9px;
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     border: 3px solid #fff;
-      
+    top: 46%;
+    margin-left: -18px;
       }
+      #resizer:after{
+        border-left: 6px solid white;
+    right: 50%;
+    margin-right: -20px;
+      }
+
+
       #after-image>img,#before-image>img {
         width:100%;
         display:block;
@@ -308,7 +330,7 @@
                 <div class="row" style="align-items: center;flex-wrap: nowrap;">
                     <div class="col-md-2">
                         <a class="navbar-brand" href="/">
-                            <img style="margin-left: -10px;width: 200px;" src="assets/img/logo/logo.png">
+                            <img style="margin-left: -10px;width: 200px;margin-top: -15px;" src="https://static.wixstatic.com/media/9d54c0_5f9167b1bffd4a2cb22348fd5b5fb7c5~mv2.png/v1/crop/x_59,y_36,w_596,h_217/fill/w_201,h_73,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01/9d54c0_5f9167b1bffd4a2cb22348fd5b5fb7c5~mv2.webp">
                         </a>
                     </div>
                     <div class="col-md-7 text-center" style="font-size: 24px;color: #ffff;">
@@ -425,7 +447,10 @@
                                                 <img src="https://cdn.propvr.tech/images/imageslider.jpg" alt="After">
                                         </div>
                                           
-                                        <div id="resizer"></div>
+                                        <div id="resizer">
+
+                                            <div id="resizer_div"></div>
+                                        </div>
                                             <div id="beforeafter" class="beforeafter">
                                                 <div class="beforeafter_div">
                                                     <div class="beforeafter_label">Before</div>
