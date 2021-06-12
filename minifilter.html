@@ -125,9 +125,6 @@
        }
 
        .dz-message{
-            position: relative;
-    top: 50%;
-    transform: translate(0,-50%);
     margin:0 auto !important;
       text-align: center;
       display: flex;
@@ -139,7 +136,8 @@
       #dropzone{
         border: 2px solid #ccc;
         border-radius: 10px;
-        height: 90px;
+        padding: 10px;
+        padding-top: 20px;
       }
 
       .drop_text{
@@ -244,6 +242,10 @@
     .book_consult_mobile1{
         display: flex !important;
     }
+
+    #header{
+        margin-bottom:0px;
+    }
 }
 
 @media only screen and (min-width:768px) and (max-width:780px){
@@ -277,6 +279,60 @@
     background-color: #fff !important;
     border: 1px solid  #979797 !important;
 }
+
+
+@media only screen and (max-width:520px){
+    .dz-message{
+        flex-wrap: wrap;
+    }
+    .drop_text{
+        margin-top: 10px;
+    }
+    .drop_text>label{
+        margin-bottom: 10px;
+    }
+        .drop_text>br{
+        display: block !important;
+    }
+}
+.drop_text>br{
+    display: none;
+}
+@media only screen and (min-width:768px){
+    .dz-message{
+        flex-wrap: wrap;
+    }
+    .drop_text{
+        margin-top: 10px;
+    }
+
+    .drop_text>label{
+        margin-bottom: 10px;
+    }
+    .drop_text>br{
+    display: block !important;
+}
+
+#gallery_slider1{
+    display: flex !important;
+    flex-wrap: wrap;
+}
+
+#gallery_slider{
+    display: none;
+    }
+}
+
+#gallery_slider1>.url_fliter_option{
+    width: 69px;
+    height: 64px;
+    margin: 0px 15px 15px 0px;
+}
+
+#gallery_slider1>.url_fliter_option>img{
+    width: 69px;
+    height: 64px;
+}
     </style>
 
 <style>
@@ -290,7 +346,7 @@
         width: 100%;
         height:100%;
     }
-    #before-after-slider {
+    #before-after-slider,#file_upload_slider {
         width:100%;
         position:relative;
         overflow:hidden;
@@ -409,7 +465,7 @@
                 <div class="row" style="align-items: center;flex-wrap: nowrap;">
                     <div class="col-md-2">
                         <a class="navbar-brand" href="/">
-                            <img style="width: 170px;" src="https://static.wixstatic.com/media/9d54c0_5f9167b1bffd4a2cb22348fd5b5fb7c5~mv2.png/v1/crop/x_59,y_36,w_596,h_217/fill/w_201,h_73,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01/9d54c0_5f9167b1bffd4a2cb22348fd5b5fb7c5~mv2.webp">
+                            <img style="width: 170px;" src="assets/img/logo/logo.webp">
                         </a>
                     </div>
                     <div class="col-md-7 text-center" style="font-size: 24px;color: #ffff;">
@@ -463,8 +519,27 @@
                                                         <div  class="url_fliter_option item">
                                                             <img onclick="gallerychange(this,'4')" src="assets/img/logo/4.1.jpg">
                                                         </div>
-                                                    </div>       
+                                                    </div>     
+                                                    
+                                                    <div style="display: none;" id="gallery_slider1">
+                                                        <div  class="selected_url_fliter url_fliter_option item">
+                                                            <img onclick="gallerychange(this,'0')" src="assets/img/logo/0.1.jpg">
+                                                        </div>
+                                                        <div  class="url_fliter_option item">
+                                                            <img onclick="gallerychange(this,'1')" src="assets/img/logo/1.1.jpg">
+                                                        </div>
+                                                        <div  class="url_fliter_option item">
+                                                            <img onclick="gallerychange(this,'3')" src="assets/img/logo/3.1.jpg">
+                                                        </div>
+                                                        <div  class="url_fliter_option item">
+                                                            <img onclick="gallerychange(this,'4')" src="assets/img/logo/4.1.jpg">
+                                                        </div>
+                                                    </div>    
+
                                                 </li>
+
+                                               
+
                                             </ul>
                                             <ul data-ttab="two" class="">
                                                 <li style="margin-bottom: 34px;">
@@ -474,7 +549,9 @@
                                                                 UPLOAD YOUR PICTURE
                                                             </div>
                                                             <div class="drop_text">
-                                                                or Drag and drop Files here to upload
+                                                               <label>or</label>
+                                                               <br/>
+                                                               Drag and drop Files here to upload
                                                             </div>
                                                         </div>
                                                         <input id="input-image" type="file"/>
@@ -492,7 +569,7 @@
                             <div class="row">
                                 <div style="margin: auto;display: flex;justify-content: center;flex-wrap: wrap;" class="col-md-12">
                                     <!-- <a  style=" width: 148px;background-color: #fff !important;color: #000 !important;" class="btn--big--round--border btn_margin bottom_btn ">Auto Enhance</a> -->
-                                    <a  style=" width: 160px;" class="btn--big--round--border btn_margin bottom_btn">Auto Upsampling</a>
+                                    <a  onclick="autosampling()" id="auto_upsampling" style="width: 160px;" class="btn--big--round--border btn_margin bottom_btn filter_optionselected">Auto Upsampling</a>
                                     <a id="filter_mode" onclick="close_filter_slider(this);" style=" width: 135px;" class="btn--big--round--border btn_margin bottom_btn">Filter Mode</a>
                                 </div>
                                 <div style="margin: auto;padding: 0;" class="col-md-9">
@@ -524,6 +601,9 @@
                                                         </div>
                         
                                                 </div>
+                                            </div>
+                                            <div id="file_upload_slider">
+                                                <img style="height: 100%;width: 100%;">
                                             </div>
                                         </div>
                                     </div>
@@ -679,7 +759,7 @@ document.getElementById('input-image').onchange = function (evt) {
                     oldimg.crossOrigin="anonymous";
                     
                     img.onload = function () {
-                       $('#before-image-src').attr('src',img.src);
+                     //  $('#before-image-src').attr('src',img.src);
                        file_filter('_1977');
                 }
             }
@@ -693,7 +773,7 @@ $('#upload-image').on('click',function(){
           })
           
 function file_filter(filter){
-          
+    
     if(current_file){
             $('.url_fliter_option').removeClass('selected_url_fliter');
             $('#file_fliter_slider').hide();
@@ -707,7 +787,9 @@ function file_filter(filter){
             xhr.responseType = 'blob'; 
             xhr.addEventListener("readystatechange", function() {
             if(this.readyState === 4) {
-                $('#after-image-src').attr('src',URL.createObjectURL(this.response));
+                $('#file_upload_slider').children().attr('src',URL.createObjectURL(this.response));
+                $('#file_upload_slider').show();
+                $('#before-after-slider').hide();
                 $('#file_fliter_slider').show();
                 $('.image_slider').show();
                 $('#loader').hide();
@@ -722,6 +804,8 @@ function file_filter(filter){
 
 
 function gallerychange(el,id){
+    $('#file_upload_slider').hide();
+    $('#before-after-slider').show();
     if(id!==$('#after-image-src').attr('data-pattern')){
         $('.url_fliter_option').removeClass('selected_url_fliter');
         $('#after-image-src').attr('data-pattern',id)
@@ -733,6 +817,17 @@ function gallerychange(el,id){
         }
         $('#after-image-src').attr('src', dimg.src)
     }
+}
+
+
+function autosampling(){
+    if($('#auto_upsampling').hasClass('filter_optionselected')){
+        $('#auto_upsampling').removeClass('filter_optionselected');
+    }
+    else
+    {
+        $('#auto_upsampling').addClass('filter_optionselected');
+    }   
 }
 
 </script>
