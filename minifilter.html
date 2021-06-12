@@ -436,12 +436,12 @@
                                 <div style="margin: auto;" class="col-md-12">
                                     <div class="ttabs-element--linebottom--inline--top">
                                         <div class="ttabs">
-                                            <div onclick="$('#url_fliter_slider').hide();$('#file_fliter_slider').hide()" class="ttab active" data-ttab="one">
+                                            <div onclick="$('#filter_mode').click()" class="ttab active" data-ttab="one">
                                                 <div class="text">
                                                     Gallery
                                                 </div>
                                             </div>
-                                            <div onclick="$('#url_fliter_slider').hide();$('#file_fliter_slider').show()" class="ttab" data-ttab="two">
+                                            <div onclick="$('#filter_mode').click()" class="ttab" data-ttab="two">
                                                 <div class="text">
                                                     Upload
                                                 </div>
@@ -493,7 +493,7 @@
                                 <div style="margin: auto;display: flex;justify-content: center;flex-wrap: wrap;" class="col-md-12">
                                     <!-- <a  style=" width: 148px;background-color: #fff !important;color: #000 !important;" class="btn--big--round--border btn_margin bottom_btn ">Auto Enhance</a> -->
                                     <a  style=" width: 160px;" class="btn--big--round--border btn_margin bottom_btn">Auto Upsampling</a>
-                                    <a onclick="close_filter_slider(this);" style=" width: 135px;" class="btn--big--round--border btn_margin bottom_btn">Filter Mode</a>
+                                    <a id="filter_mode" onclick="close_filter_slider(this);" style=" width: 135px;" class="btn--big--round--border btn_margin bottom_btn">Filter Mode</a>
                                 </div>
                                 <div style="margin: auto;padding: 0;" class="col-md-9">
                                     <div id="loader" style="display: none;">
