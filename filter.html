@@ -246,6 +246,16 @@
     margin-top: 20px;
     margin-right: 20px;
 }
+.bottom_btn{
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width:460px){
+    .bottom_btn{
+    width: 160px !important;
+}
+}
+
     </style>
 
 <style>
@@ -476,7 +486,7 @@
                     </div>
 
                     <div class="row" style="padding-bottom:30px;align-items: center;width: 100%;height: 100%;margin: 0;">
-                        <div style="margin: auto;" class="col-md-9">
+                        <div style="margin: auto;padding: 0;" class="col-md-9">
                             <div id="loader" style="display: none;">
                                 <p style="font-weight: 600 !important;font-size: 0.7rem;margin: 0px;color: #000;width: 100%;text-align: center;position: absolute;top: 5%;background-color: transparent !important;left: -2%;">
                                     Hang in there while we do the magic ...
@@ -513,35 +523,35 @@
                                 <div id="url_filter_slider_div" class="filter_slider_div">
                                     <div id="filter_slider" class="owl-carousel">
                                         <div id="bluesky" onclick="upload_image_url('bluesky')" class="url_fliter_option item">
-                                            <img class="filter_img" src="assets/img/about-corporate-1.png">
+                                            <img class="filter_img" src="assets/img/Filter/dulltobluesky.jpg">
                                             <span class="filter_slider_text">blue sky</span>
                                         </div>
                                         <div id="bluetogrey" onclick="upload_image_url('bluetogrey')" class="url_fliter_option item">
-                                            <img class="filter_img" src="assets/img/about-gallery-3@2x.jpg">
+                                            <img class="filter_img" src="assets/img/Filter/bluetogrey.jpg">
                                             <span class="filter_slider_text">bluetogrey</span>
                                         </div>
                                         <div id="bluetoorange" onclick="upload_image_url('bluetoorange')" class="url_fliter_option item">
-                                            <img class="filter_img" src="assets/img/about-corporate-1.png">
+                                            <img class="filter_img" src="assets/img/Filter/blueandorange.jpg">
                                             <span class="filter_slider_text">bluetoorange</span>
                                         </div>
                                         <div id="brighterwhite" onclick="upload_image_url('brighterwhite')" class="url_fliter_option item">
-                                            <img class="filter_img" src="assets/img/about-corporate-1.png">
+                                            <img class="filter_img" src="assets/img/Filter/brighterwhite.jpg">
                                             <span class="filter_slider_text">brighterwhite</span>
                                         </div>
                                         <div id="coolshadow" onclick="upload_image_url('coolshadow')" class="url_fliter_option item">
-                                            <img class="filter_img" src="assets/img/about-corporate-1.png">
+                                            <img class="filter_img" src="assets/img/Filter/coolshadow.jpg">
                                             <span class="filter_slider_text">coolshadow</span>
                                         </div>
                                         <div id="coolwhite" onclick="upload_image_url('coolwhite')" class="url_fliter_option item">
-                                            <img class="filter_img" src="assets/img/about-corporate-1.png">
+                                            <img class="filter_img" src="assets/img/Filter/coolwhite.jpg">
                                             <span class="filter_slider_text">coolwhite</span>
                                         </div>
                                         <div id="vibrantsunset" onclick="upload_image_url('vibrantsunset')" class="url_fliter_option item">
-                                            <img class="filter_img" src="assets/img/about-corporate-1.png">
+                                            <img class="filter_img" src="assets/img/Filter/vibrantsunset.jpg">
                                             <span class="filter_slider_text">vibrantsunset</span>
                                         </div>
                                         <div id="yellowtowhite" onclick="upload_image_url('yellowtowhite')" class="url_fliter_option item">
-                                            <img class="filter_img" src="assets/img/about-corporate-1.png">
+                                            <img class="filter_img" src="assets/img/Filter/yellowtowhite.jpg">
                                             <span class="filter_slider_text">yellowtowhite</span>
                                         </div>
                                     </div> 
@@ -621,9 +631,9 @@
                         </div>
                     </div>
 
-                    <div class="row">
+                    <div style="width:100%;margin: 0;" class="row">
                         <div style="margin: auto;" class="col-md-9">
-                            <div class="row">
+                            <div style="width:100%;margin: 0;" class="row">
                                 <div class="col-md-10" style="border-bottom: 1px solid #656565;margin: auto;">
                                 </div>
                             </div> 
@@ -631,10 +641,10 @@
                     </div>
 
                     <div style="margin-top: 25px;" class="row">
-                        <div style="margin: auto;display: flex;justify-content: center;" class="col-md-9">
-                            <a href="#"  style=" width: 148px;background-color: #fff !important;color: #000 !important;" class="btn--big--round--border btn_margin">Auto Enhance</a>
-                            <a href="#" style=" width: 160px;" class="btn--big--round--border btn_margin">Auto Upsampling</a>
-                            <a href="#" style=" width: 135px;" class="btn--big--round--border btn_margin">Filter Mode</a>
+                        <div style="margin: auto;display: flex;justify-content: center;flex-wrap: wrap;" class="col-md-9">
+                            <a href="#"  style=" width: 148px;background-color: #fff !important;color: #000 !important;" class="btn--big--round--border btn_margin bottom_btn ">Auto Enhance</a>
+                            <a href="#" style=" width: 160px;" class="btn--big--round--border btn_margin bottom_btn">Auto Upsampling</a>
+                            <a href="#" style=" width: 135px;" class="btn--big--round--border btn_margin bottom_btn">Filter Mode</a>
                         </div>
                     </div>
                 </div>
@@ -655,6 +665,7 @@
 $('.owl-carousel').owlCarousel({
     loop:false,
     margin:10,
+    autoWidth:true,
     responsiveClass:true,
     nav:false,
     dots:false,
