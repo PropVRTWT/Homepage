@@ -134,10 +134,11 @@
     padding-right: 10px;
       }
       #dropzone{
-        border: 2px solid #ccc;
+        border: 2px dashed #ccc;
         border-radius: 10px;
         padding: 10px;
         padding-top: 20px;
+        margin-bottom: 25px;
       }
 
       .drop_text{
@@ -556,7 +557,9 @@
                                                         </div>
                                                         <input id="input-image" type="file"/>
                                                     </div> 
-                                                   
+                                                    <center>
+                                                        <div onclick="autosampling()" class="book_consult" style="width: 100px !important;font-size: 12px;">PROCESS</div>
+                                                    </center>
                                                 </li>
                                             </ul>
                                             
@@ -569,7 +572,7 @@
                             <div class="row">
                                 <div style="margin: auto;display: flex;justify-content: center;flex-wrap: wrap;" class="col-md-12">
                                     <!-- <a  style=" width: 148px;background-color: #fff !important;color: #000 !important;" class="btn--big--round--border btn_margin bottom_btn ">Auto Enhance</a> -->
-                                    <a  onclick="autosampling()" id="auto_upsampling" style="width: 160px;" class="btn--big--round--border btn_margin bottom_btn filter_optionselected">Auto Upsampling</a>
+                                    <a id="auto_upsampling" style="width: 160px;" class="btn--big--round--border btn_margin bottom_btn">Auto Upsampling</a>
                                     <a id="filter_mode" onclick="close_filter_slider(this);" style=" width: 135px;" class="btn--big--round--border btn_margin bottom_btn">Filter Mode</a>
                                 </div>
                                 <div style="margin: auto;padding: 0;" class="col-md-9">
@@ -612,66 +615,40 @@
                                             <span class="more_filter_text">Choose Filter</span>
                                             <div class="filter_slider_div">
                                                 <div id="filter_slider" class="owl-carousel">
-                                                    <div id="_1977_filter" onclick="file_filter('_1977')" class="url_fliter_option item">
-                                                        <img class="filter_img" src="assets/img/about-corporate-1.png">
-                                                        <span class="filter_slider_text">_1977</span>
+
+                                                    <div id="bluesky_filter" onclick="file_filter('bluesky')" class="url_fliter_option item">
+                                                        <img class="filter_img" src="assets/img/Filter/dulltobluesky.jpg">
+                                                        <span class="filter_slider_text">blue sky</span>
                                                     </div>
-                                                    <div id="aden_filter" onclick="file_filter('aden')" class="url_fliter_option item">
-                                                        <img class="filter_img" src="assets/img/about-gallery-3@2x.jpg">
-                                                        <span class="filter_slider_text">aden</span>
+                                                    <div id="bluetogrey_filter" onclick="file_filter('bluetogrey')" class="url_fliter_option item">
+                                                        <img class="filter_img" src="assets/img/Filter/bluetogrey.jpg">
+                                                        <span class="filter_slider_text">bluetogrey</span>
                                                     </div>
-                                                    <div id="brannan_filter" onclick="file_filter('brannan')" class="url_fliter_option item">
-                                                        <img class="filter_img" src="assets/img/about-corporate-1.png">
-                                                        <span class="filter_slider_text">brannan</span>
+                                                    <div id="bluetoorange_filter" onclick="file_filter('bluetoorange')" class="url_fliter_option item">
+                                                        <img class="filter_img" src="assets/img/Filter/blueandorange.jpg">
+                                                        <span class="filter_slider_text">bluetoorange</span>
                                                     </div>
-                                                    <div id="brooklyn_filter" onclick="file_filter('brooklyn')" class="url_fliter_option item">
-                                                        <img class="filter_img" src="assets/img/about-corporate-1.png">
-                                                        <span class="filter_slider_text">brooklyn</span>
+                                                    <div id="brighterwhite_filter" onclick="file_filter('brighterwhite')" class="url_fliter_option item">
+                                                        <img class="filter_img" src="assets/img/Filter/brighterwhite.jpg">
+                                                        <span class="filter_slider_text">brighterwhite</span>
                                                     </div>
-                                                    <div id="clarendon_filter" onclick="file_filter('clarendon')" class="url_fliter_option item">
-                                                        <img class="filter_img" src="assets/img/about-corporate-1.png">
-                                                        <span class="filter_slider_text">clarendon</span>
+                                                    <div id="coolshadow_filter" onclick="file_filter('coolshadow')" class="url_fliter_option item">
+                                                        <img class="filter_img" src="assets/img/Filter/coolshadow.jpg">
+                                                        <span class="filter_slider_text">coolshadow</span>
                                                     </div>
-                                                    <div id="earlybird_filter" onclick="file_filter('earlybird')" class="url_fliter_option item">
-                                                        <img class="filter_img" src="assets/img/about-corporate-1.png">
-                                                        <span class="filter_slider_text">earlybird</span>
+                                                    <div id="coolwhite_filter" onclick="file_filter('coolwhite')" class="url_fliter_option item">
+                                                        <img class="filter_img" src="assets/img/Filter/coolwhite.jpg">
+                                                        <span class="filter_slider_text">coolwhite</span>
                                                     </div>
-                                                    <div id="gingham_filter" onclick="file_filter('gingham')" class="url_fliter_option item">
-                                                        <img class="filter_img" src="assets/img/about-corporate-1.png">
-                                                        <span class="filter_slider_text">gingham</span>
+                                                    <div id="vibrantsunset_filter" onclick="file_filter('vibrantsunset')" class="url_fliter_option item">
+                                                        <img class="filter_img" src="assets/img/Filter/vibrantsunset.jpg">
+                                                        <span class="filter_slider_text">vibrantsunset</span>
                                                     </div>
-                                                    <div id="hudson_filter" onclick="file_filter('hudson')" class="url_fliter_option item">
-                                                        <img class="filter_img" src="assets/img/about-corporate-1.png">
-                                                        <span class="filter_slider_text">hudson</span>
+                                                    <div id="yellowtowhite_filter" onclick="file_filter('yellowtowhite')" class="url_fliter_option item">
+                                                        <img class="filter_img" src="assets/img/Filter/yellowtowhite.jpg">
+                                                        <span class="filter_slider_text">yellowtowhite</span>
                                                     </div>
-                                                    <div id="inkwell_filter" onclick="file_filter('inkwell')" class="url_fliter_option item">
-                                                        <img class="filter_img" src="assets/img/about-corporate-1.png">
-                                                        <span class="filter_slider_text">inkwell</span>
-                                                    </div>
-                                                    <div id="kelvin_filter" onclick="file_filter('kelvin')" class="url_fliter_option item">
-                                                        <img class="filter_img" src="assets/img/about-corporate-1.png">
-                                                        <span class="filter_slider_text">kelvin</span>
-                                                    </div>
-                                                    <div id="lark_filter" onclick="file_filter('lark')" class="url_fliter_option item">
-                                                        <img class="filter_img" src="assets/img/about-corporate-1.png">
-                                                        <span class="filter_slider_text">lark</span>
-                                                    </div>
-                                                    <div id="lofi_filter" onclick="file_filter('lofi')" class="url_fliter_option item">
-                                                        <img class="filter_img" src="assets/img/about-corporate-1.png">
-                                                        <span class="filter_slider_text">lofi</span>
-                                                    </div>
-                                                    <div id="maven_filter" onclick="file_filter('maven')" class="url_fliter_option item">
-                                                        <img class="filter_img" src="assets/img/about-corporate-1.png">
-                                                        <span class="filter_slider_text">maven</span>
-                                                    </div>
-                                                    <div id="mayfair_filter" onclick="file_filter('mayfair')" class="url_fliter_option item">
-                                                        <img class="filter_img" src="assets/img/about-corporate-1.png">
-                                                        <span class="filter_slider_text">mayfair</span>
-                                                    </div>
-                                                    <div id="moon_filter" onclick="file_filter('moon')" class="url_fliter_option item">
-                                                        <img class="filter_img" src="assets/img/about-corporate-1.png">
-                                                        <span class="filter_slider_text">moon</span>
-                                                    </div>
+                                                
                                                 </div> 
                                             </div>
                                         
@@ -760,7 +737,8 @@ document.getElementById('input-image').onchange = function (evt) {
                     
                     img.onload = function () {
                      //  $('#before-image-src').attr('src',img.src);
-                       file_filter('_1977');
+                    
+                       file_filter('bluesky');
                 }
             }
                 fr.readAsDataURL(files[0]);
@@ -781,12 +759,13 @@ function file_filter(filter){
             $('#loader').show();
             var data = new FormData();
             data.append("image_file", current_file, current_file.name);
-            data.append("filter", filter);
+            data.append("lut_filter", filter);
             var xhr = new XMLHttpRequest();
             xhr.withCredentials = true;
             xhr.responseType = 'blob'; 
             xhr.addEventListener("readystatechange", function() {
             if(this.readyState === 4) {
+                $('#auto_upsampling').removeClass('filter_optionselected')
                 $('#file_upload_slider').children().attr('src',URL.createObjectURL(this.response));
                 $('#file_upload_slider').show();
                 $('#before-after-slider').hide();
@@ -796,7 +775,7 @@ function file_filter(filter){
                 $('#'+filter+'_filter').addClass('selected_url_fliter');
             }
         });
-        xhr.open("POST", "https://snapmoon.herokuapp.com/images/filter-by-file");
+        xhr.open("POST", "https://snapmoon.herokuapp.com/images/sqy-filter-by-file");
         xhr.send(data);
     }
             
@@ -821,13 +800,36 @@ function gallerychange(el,id){
 
 
 function autosampling(){
-    if($('#auto_upsampling').hasClass('filter_optionselected')){
-        $('#auto_upsampling').removeClass('filter_optionselected');
-    }
-    else
-    {
-        $('#auto_upsampling').addClass('filter_optionselected');
-    }   
+    if(!$('#auto_upsampling').hasClass('filter_optionselected') && current_file){
+            $('#auto_upsampling').addClass('filter_optionselected');
+            var data = new FormData();
+            $('#loader').show();
+            $('#file_upload_slider').hide();
+            data.append("input", blobToFile($('#file_upload_slider').children().attr('src'), current_file.name),current_file.name);
+            var xhr = new XMLHttpRequest();
+            xhr.withCredentials = true;
+            xhr.responseType = 'blob'; 
+            xhr.addEventListener("readystatechange", function() {
+            if(this.readyState === 4) {
+                $('#file_upload_slider').children().attr('src',URL.createObjectURL(this.response));
+                $('#file_upload_slider').show();
+                $('#before-after-slider').hide();
+                $('#file_fliter_slider').show();
+                $('.image_slider').show();
+                $('#loader').hide();
+            }
+        });
+        xhr.open("POST", "https://syai-inpaint.squareyards.com/isr");
+        xhr.send(data);
+    } 
+}
+
+
+function blobToFile(theBlob, fileName){
+  const myFile = new File([theBlob], fileName, {
+  type: theBlob.type,
+});
+    return myFile;
 }
 
 </script>

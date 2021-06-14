@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, shrink-to-fit=no" />
+
+    <title>
+       PropVR
+    </title>
+
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="theme-color" content="#000" />
+
+    <meta name="description" content="" />
+    <meta name="author" content="Patrick David" />
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" href="assets/img/favicon-32.png" sizes="16x16" type="image/png" />
+    <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="assets/img/favicon-48.png" sizes="48x48" type="image/png" />
+    <link rel="icon" href="assets/img/favicon-62.png" sizes="62x62" type="image/png" />
+    <link rel="icon" href="assets/img/favicon-96.png" sizes="96x96" type="image/png" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="/" />
+
+    <!-- Open Graph -->
+    <meta property="og:image" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="" />
+    <meta name="twitter:creator" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="" />
+
+    <!-- Custom css -->
+    <link href="https://fonts.googleapis.com/css?family=Open Sans" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- <link rel="stylesheet" href="assets/css/custom.css" /> -->
+    <style>
+    html,body,p,[class|="btn"],h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,span{
+        font-family: 'Open Sans';
+        font-weight: bold !important;
+        background-color: #fff !important;
+    }
+
+#header{
+    height: 87px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* .row{
+    width: 100%;
+    margin: 0;
+} */
+
+.login_btn{
+    background: linear-gradient(135deg, #3A416F 0%, #141727 100%);
+    box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 9%), 0px 2px 3px -1px rgb(0 0 0 / 7%);
+    border-radius: 16px;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 12px;
+    color: #fff;
+    padding: 8px 32px 8px 32px;
+    width: 163px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+}
+.heading{
+    font-weight: 800 !important;
+    font-size: 24px;
+    color: #252F40;
+}
+
+@media only screen and (min-width:425px){
+    .heading_mid{
+        display: block !important;
+    }
+}
+
+.title_content{
+    font-size: 36px;
+    line-height: 45px;
+    color: #252F40;
+    padding-bottom: 16px;
+}
+
+.title_content1{
+    font-size: 16px;
+line-height: 26px;
+font-weight: normal !important;
+color: #252F40;
+}
+.curve_div{
+    background-image: url(https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/curved-images/curved5.jpg);
+    position: relative;
+    transform: translateY(-119px) scaleY(2);
+    height: 249px;
+}
+.h-100{
+    height: 100% !important;
+}
+
+.w-100{
+    width: 100 !important;
+}
+.z-index-2 {
+    z-index: 2!important;
+}
+.top-0 {
+    top: 0!important;
+}
+.start-0 {
+    left: 0!important;
+}
+.position-absolute {
+    position: absolute!important;
+}
+.ms-n2 {
+    margin-left: -.5rem!important;
+}
+.mask {
+    position: absolute;
+    background-position: 50%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .8;
+    background-image: linear-gradient(310deg,#2152ff,#21d4fd);
+    opacity: .9!important;
+}
+
+.bg-cover{
+    background-size: cover;
+}
+@media only screen and (min-width:767px) and (max-width:991.95px){
+    .input_row{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media only screen and (min-width:767px){
+    .input_box_div{
+        padding-bottom: 22px;
+    }
+}
+.input_box{
+    background: #FFFFFF;
+    border: 1px solid #D2D6DA;
+    box-sizing: border-box;
+    border-radius: 8px;
+    height: 48px;
+    width: 280px;
+    padding: 13px;
+    color: #495057;
+    font-size: 14px;
+    line-height: 7px;
+    font-weight: normal !important;
+}
+
+.input_box:focus,.input_box:focus-visible{
+    border: 1px solid #E293D3;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 0px 2px #E9AEDE;
+    border-radius: 8px;
+    outline: none;
+}
+
+.generate_btn{
+    width: 280px;
+    height: 48px;
+    background: linear-gradient(135deg, #21D4FD 0%, #2152FF 100%);
+    /* box-shadow: 0px 4px 7px -1px rgba(0, 0, 0, 0.11), 0px 2px 4px -1px rgba(0, 0, 0, 0.07); */
+    border-radius: 8px;
+    padding: 14px 100px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 7px;
+    font-weight: normal !important;
+    cursor: pointer;
+}
+.generate_btn:hover,.generate_btn:active ,.generate_btn:focus{
+    background: linear-gradient(135deg, #21D4FD 0%, #2152FF 100%);
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.09), 0px 2px 3px -1px rgba(0, 0, 0, 0.07);
+    border-radius: 8px;
+    outline: none !important;
+}
+
+.input_toggle_box{
+    border: 1px solid #e9ecef;
+    position: relative;
+    background-color: rgba(58,65,111,.1);
+    height: 20px;
+    width: 40px;
+    appearance: none;
+    background-image: none;
+    background-position: 0;
+    border-radius: 10px;
+    transition: background-color .25s ease,border-color .25s ease,background-position .15s ease-in-out,opacity .15s ease-out,box-shadow .15s ease-in-out;
+}
+
+.input_toggle_box:after{
+    transition: transform .25s ease-in-out,background-color .25s ease-in-out;
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    position: absolute;
+    background-color: #fff;
+    transform: translateX(1px);
+    box-shadow: 0 0.25rem 0.375rem -0.0625rem hsl(0deg 0% 8% / 12%), 0 0.125rem 0.25rem -0.0625rem hsl(0deg 0% 8% / 7%);
+    top: 1px;
+}
+.input_toggle_box:checked:after{
+    transform: translateX(21px);
+}
+.input_toggle_box:checked{
+    background: rgba(58, 65, 111, 0.95);
+    border-radius: 10px;
+}
+.ai_content_ul{
+    list-style: disc;
+    line-height: 32px;
+    padding: 18px 10px 80px 13px;
+    color: #495057;
+    font-size: 16px;
+    font-weight: 400 !important;
+}
+.keywords{
+    font-size: 14px;
+    font-weight: normal !important;
+    color: #67748E;
+}
+
+.ul_border{
+    border: 1px solid #D2D6DA;
+    border-radius: 8px;
+    padding: 18px 10px 8px 20px;
+    margin-top: 18px;
+    margin-bottom: 20px;
+}
+</style>
+
+ </head>
+
+<body  class="visible">
+    <!--  Main Wrap  -->
+    <div id="main-wrap">
+        <!--  Header & Menu  -->
+        <header id="header">
+            <div style="width:100%" class="wrap-header--padding-lg">
+                <div class="row" style="align-items: center;flex-wrap: nowrap;">
+                    <div class="col-md-2">
+                        <div class="heading">ai content</div>
+                    </div>
+                    <div style="display: none;" class="col-md-7 heading_mid"></div>
+                    <div class="col-md-3" style="display: flex;justify-content: flex-end;">
+                        <div class="login_btn">
+                            LOGIN
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </header>
+        <!--  END Header & Menu  -->
+        <div class="page-content">
+            <section data-padding="col" >
+                <div class="container">
+                    <div class="card">
+                        <div class="row" style="width: 100%;margin: 0;align-items: center;">
+                            <div class="col-md-8">
+                                <div class="title_content">Leading AI-based content generation
+                                                    for real estate
+                                </div>
+                                <div class="title_content1">
+                                                    We use the most cutting language models to generate the most SEO friendly real-estate content for you.
+                                </div>
+                            </div>
+                            <div class="col-md-4" style="overflow: hidden;padding: 0;">
+                                <div class="col-md-12 position-relative bg-cover px-0 curve_div">
+                                    <div class="position-absolute z-index-2 w-100 h-100 top-0 start-0 d-lg-block d-none">
+                                                        <img src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/wave-1.svg" class="h-100 ms-n2" alt="vertical-wave">
+                                    </div>
+                                    <div class="z-index-2 text-center d-flex h-100 w-100 d-flex m-auto justify-content-center">
+                                        <div class="mask"></div>    
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="row" data-padding="xstop">
+                        <div class="col-md-12">
+                            <div style="font-size: 24px;color: #252F40;">
+                                👋  let us create a beautiful description for your property</div>
+                        </div>
+                        <div class="col-md-12">
+                           <div style="font-size: 16px;padding-top: 12px;margin-left: 10px" class=" keywords">
+                            Help us with the details below and click on generate to see the magic
+                           </div> 
+                        </div>
+                    </div>
+                    <div style="padding-top: 22px;padding-bottom: 22px;"  class="row input_row">
+                        <div class="col-md-4 input_box_div">
+                            <input class="input_box" placeholder="Apartment/Villa" type="text"/>
+                        </div>
+                        <div class="col-md-4 input_box_div">
+                            <input class="input_box" placeholder="Number of bedrooms" type="text"/>
+                        </div>
+                        <div class="col-md-4 input_box_div">
+                            <input class="input_box" placeholder="Price/Rent" type="text"/>
+                        </div>
+
+                        <div class="col-md-4 input_box_div">
+                            <input class="input_box" placeholder="Locality" type="text"/>
+                        </div>
+                        <div class="col-md-4 input_box_div">
+                            <input class="input_box" placeholder="City" type="text"/>
+                        </div>
+                        <div class="col-md-4 input_box_div">
+                            <button class="generate_btn">GENERATE</button>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-8">
+                                        <input class="input_toggle_box" type="checkbox" id="flexSwitchCheckDefault">
+                                        <label style="transform: translate(4px,-4px);" class="form-check-label" for="flexSwitchCheckDefault">Save for later</label></div><div class="col-md-4">
+                                            <div class="keywords text-center">Free upto 2,000 words</div>
+                                        </div>
+                                    </div>
+                                </div>
+                    </div>
+                  
+
+                    <div class="row" data-padding="xstop">
+                        <div class="col-md-12">
+                            <div>✨ the content appears here..</div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="ul_border">
+                                <ul class="ai_content_ul">
+                                    <li>A Spacious Penthouse having 2200 Square Feet carpet area is available for sale at a moderate price of just 1 crore. </li>
+                                    <li> This Property houses 4 Bedrooms, 2 Bathrooms & 2 Parking spots. </li>
+                                    <li> Property is located in subhas Nagar, Delhi which is one of the most happening location of the city. </li>
+                                    <li>East facing Property is semi furnished, ready to move & constructed in last 7-10 years. The property is on 9th floor where total floor count is 15.</li>
+                                </ul>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!--  END: Main Wrap  -->
+    <!--  Scripts  -->
+<script src="https://cdn.propvr.tech/js/jquery-3.3.1.min.js"></script>
+<script src="assets/js/elements.js"></script>
+
+
+</body>
+</html>
