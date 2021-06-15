@@ -558,7 +558,7 @@
                                                         <input id="input-image" type="file"/>
                                                     </div> 
                                                     <center>
-                                                        <div onclick="autosampling()" class="book_consult" style="width: 100px !important;font-size: 12px;">PROCESS</div>
+                                                        <div id="process_btn" onclick="autosampling()" class="book_consult" style="display:none;width: 100px !important;font-size: 12px;">PROCESS</div>
                                                     </center>
                                                 </li>
                                             </ul>
@@ -715,7 +715,8 @@ function close_filter_slider(el){
 var current_file;
 
 document.getElementById('input-image').onchange = function (evt) {
-
+            
+            $('#process_btn').hide();
             $('.url_fliter_option').removeClass('selected_url_fliter');
             $('#file_fliter_slider').hide();
             $('.image_slider').hide();
@@ -760,11 +761,12 @@ function file_filter(filter){
             var data = new FormData();
             data.append("image_file", current_file, current_file.name);
             data.append("lut_filter", filter);
-            var xhr = new XMLHttpRequest();
+             var xhr = new XMLHttpRequest();
             xhr.withCredentials = true;
             xhr.responseType = 'blob'; 
             xhr.addEventListener("readystatechange", function() {
             if(this.readyState === 4) {
+                $('#process_btn').show();
                 $('#auto_upsampling').removeClass('filter_optionselected')
                 $('#file_upload_slider').children().attr('src',URL.createObjectURL(this.response));
                 $('#file_upload_slider').show();
@@ -805,7 +807,7 @@ function autosampling(){
             var data = new FormData();
             $('#loader').show();
             $('#file_upload_slider').hide();
-            data.append("input", blobToFile($('#file_upload_slider').children().attr('src'), current_file.name),current_file.name);
+            data.append("input",current_file);
             var xhr = new XMLHttpRequest();
             xhr.withCredentials = true;
             xhr.responseType = 'blob'; 
